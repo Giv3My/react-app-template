@@ -46,7 +46,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: isProduction ? '[name].[contenthash].js' : '[name].js',
+    filename: isProduction ? 'static/js/[name].[contenthash].js' : 'static/js/[name].js',
   },
   module: {
     rules: [
@@ -69,14 +69,14 @@ module.exports = {
         test: /\.(png|jpe?g|svg|gif)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'static/img/[contenthash][ext]'
+          filename: 'static/media/[contenthash][ext]'
         }
       },
       {
         test: /\.(ttf|woff|woff2|eof)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'static/fonts/[contenthash][ext]'
+          filename: 'static/media/[contenthash][ext]'
         }
       }
     ]
